@@ -1,0 +1,311 @@
+*{
+  --color2:#4A4E69; /* Independence (White) */
+  --color1:#22223B; /* Space Cadet (White) */
+  --color3:#96BBBB; /* Opal (Black) */
+  --color4:#FF6B6B /* Bittersweet (White) */;
+  --fontMain:white;
+  --fontAlt:#22223B;
+  --borderRadius: 30px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arimo, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--color1);
+  color: var(--fontMain);
+}
+
+a {
+  text-decoration: none;
+}
+
+.subtitle {
+  text-align: center;
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+blockquote {
+  text-align: center;
+  margin: 20px 50px 20px 50px;
+  padding: 20px;
+  background-color: var(--color2);
+}
+
+blockquote:first-of-type {
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+}
+
+blockquote:last-of-type {
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+ /* Responsive Menu Bar
+ h/t to https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript/ */
+
+ul {
+  list-style: none;
+}
+
+.menubar {
+  background-color: var(--color3);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 60px;
+  margin-left: 10px;
+  color: var(--fontAlt);
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: var(--color3);
+  overflow: hidden;
+}
+
+.menu a{
+  display: block;
+  padding: 20px;
+  color: var(--fontAlt);
+}
+
+.menu a:hover{
+  background-color: var(--color2);
+  color: var(--color3);
+}
+
+.nav{
+  max-height: 0;
+  transition: max-height .5s ease-out;
+}
+
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}
+
+.hamb-line {
+  background: var(--fontAlt);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+}
+
+.hamb-line::before, .hamb-line::after {
+  background: var(--fontAlt);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before{
+  top: 5px;
+}
+
+.hamb-line::after{
+  top: -5px;
+}
+
+.side-menu {
+  display:none;
+}
+
+.side-menu:checked ~ nav{
+  max-height:100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top:0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top:0;
+}
+
+/* Layout and Content */
+.intro {
+  padding: 20px;
+}
+
+.title, .tagline, .intro_text {
+  font-family: Arimo, sans-serif;
+  padding: 20px 0 20px 0;
+  font-weight: 600;
+  max-width: 600px;
+  margin: auto;
+}
+
+.title {
+  font-size: 5em;
+}
+
+.tagline {
+  font-size: 2em;
+}
+
+.intro_text {
+  font-size: 1.5em;
+}
+
+.vitals {
+  width: 100%;
+  background-color: var(--color2);
+  color: var(--fontMain);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.vitals_ed, .vitals_tech, .vitals_soc, .vitals_me {
+  width: 24%;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 20px;
+  min-width: 300px;
+  margin: auto;
+}
+
+.fa-solid {
+  font-size: 6vw;
+  padding: 40px 0 40px 0;
+}
+
+.about-me {
+  width: 100%;
+  background-color: var(--color1);
+  color: var(--fontMain);
+  padding: 40px;
+  font-family: serif;
+}
+
+.about-me p {
+  padding-bottom: 10px;
+}
+
+.about-me ul, li {
+  line-height: 1.5em;
+}
+
+.about-me li {
+  list-style: square;
+  list-style-position: inside;
+}
+
+.about-bold {
+  font-weight: 600;
+}
+
+.skills {
+  width: 100%;
+  background-color: var(--color2);
+  color: var(--fontMain);
+  padding: 40px;
+}
+
+.skills ul {
+  column-count: 2;
+  column-gap: 10px;
+}
+
+.skills li {
+  padding-bottom: 10px;
+}
+
+.experience {
+  width: 100%;
+  background-color: var(--color1);
+  color: var(--fontMain);
+  padding: 20px;
+}
+
+.education {
+  width: 100%;
+  background-color: var(--color2);
+  color: var(--fontMain);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.education ul {
+  list-style: square;
+  list-style-position: inside;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.edu_title {
+  width: 100%;
+}
+
+.edu_certs, .edu_edu, .edu_extras {
+  width: 50%;
+  padding: 0 10px 0 10px;
+  min-width: 300px;
+}
+
+.contact-me {
+  width: 100%;
+  background-color: var(--color1);
+  color: var(--fontMain);
+  padding: 20px;
+}
+
+/* Media Queries and Responsive Handling */
+@media (min-width: 768px) {
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+  }
+  .menu li{
+    float: left;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+    color: black;
+  }
+
+  .hamb{
+    display: none;
+  }
+  .title, .tagline, .intro_text {
+    max-width: 900px;
+  }
+  .skills ul {
+    column-count: 4;
+  }
+  .edu_certs, .edu_edu, .edu_extras {
+    width: 33%;
+  }
+}
